@@ -1,0 +1,101 @@
+@import 'globals';
+@import 'vars';
+//Start header
+.header {
+    background: url(../images/back_new.jpg);
+    opacity: 0.5;
+    &__menu {
+        padding: 25px 0 80px;
+        & .menu__btn {
+            padding-inline-start: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            & li {
+                display: inline-block;
+                font-size: 25px;
+                & a {
+                    transition: all .5s;
+                    border: 1px solid transparent;
+                    padding: 5px 15px;
+                    border-radius: 10px;
+                    background-color: rgba($color: #fff, $alpha: 0.8);
+                    border: 1px solid #000;
+                    &:hover {
+                        color: white;
+                        background-color: rgba($color: #000000, $alpha: 0.9);
+                    }
+                }
+            }
+            .drop-down a:hover {
+                color: white;
+                background-color: #000;
+                border-radius: 10px 10px 0 0;
+                border-bottom: 1px solid transparent;
+            }
+        }
+    }
+}
+
+.drop-down {
+    position: relative;
+    &__btn {
+        transition: all .5s;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        position: absolute;
+        padding: 0;
+        top: 28px;
+        background-color: #000;
+        & li {
+            margin-top: 10px;
+        }
+    }
+}
+
+.drop-down:hover>.drop-down__btn {
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+}
+
+.drop-down__btn li:hover>.drop-down {
+    color: white;
+    background-color: #000;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid transparent;
+}
+
+//End header
+//Start section works
+.works {
+    &__inner {
+        position: relative;
+        background-color: #fff;
+        top: -50px;
+        padding: 20px 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__item {
+        display: flex;
+        background-color: indigo;
+        padding: 10px 10px;
+        border-radius: 10px;
+    }
+}
+
+.item {
+    &__img {
+        width: 100px;
+        height: 100px;
+        background-image: url(../images/fon.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+//End section works
