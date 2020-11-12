@@ -9,8 +9,9 @@ html {
 }
 
 body {
-    background: url(../images/fon.png);
-    // background-size: 50vw;
+    background: linear-gradient(142deg, rgba(2, 0, 36, 1) 0%, rgba(1, 106, 146, 1) 50%, rgba(0, 212, 255, 1) 100%);
+    width: 100%;
+    height: 100vh;
 }
 
 a {
@@ -19,10 +20,10 @@ a {
 }
 
 .container {
-    max-width: 1030px;
+    max-width: 1140px;
     margin: 0 auto;
     padding: 0 15px;
-    &__full {
+    &__fluid {
         width: 100%;
         padding: 0 35px;
     }
