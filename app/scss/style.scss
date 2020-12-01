@@ -1,14 +1,142 @@
 @import 'globals';
 @import 'vars';
+//Start top-bar
+.top-bar {
+    &__inner {
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        height: 90px;
+        width: 100%;
+        top: 0;
+        background-color: #fff;
+        z-index: 1;
+    }
+    &__logo {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 70px;
+        width: auto;
+        & :nth-child(1) {
+            height: 70px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        & :nth-child(2),
+        & :nth-child(4) {
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 29px;
+            height: 32px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+    &__user {
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+        margin-bottom: auto;
+        align-items: center;
+        margin-right: 30px;
+        &--img {
+            width: 75px;
+            height: 75px;
+            background-size: cover;
+            margin-right: 15px;
+            border-radius: 50%;
+            box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.46), inset 0px 10px 35.42px 10.58px rgba(0, 0, 0, 0.34);
+        }
+        &--name {
+            color: black;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.drop-down {
+    position: relative;
+    display: inline-block;
+    padding: 0 15px;
+    &:hover {
+        background-color: #ccc;
+    }
+    &:hover>&__list {
+        overflow: visible;
+        height: auto;
+        opacity: 1;
+        transition: all 0.5s;
+    }
+    a {
+        &:hover {
+            color: chartreuse;
+        }
+    }
+    ul {
+        padding-left: 0;
+    }
+    li {
+        display: block;
+        text-decoration: none;
+        border-top: 1px solid #000;
+    }
+    a {
+        padding-left: 10px;
+    }
+    &__list {
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        padding-bottom: 10px;
+        background-color: #ccc;
+        border-radius: 0 0 5px 5px;
+        li {
+            margin-top: 10px;
+        }
+    }
+}
+
+.number {
+    &__work {
+        background-color: red;
+        padding: 5px;
+        border-radius: 50%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+//End top-bar
 //Start header
 .header {
+    margin-top: 90px;
     &__menu {
+        padding-top: 50px;
+        padding-left: 0;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         li {
             display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: all .5s;
+            &:hover {
+                background-color: rgba($color: #000, $alpha: 0.5);
+                color: #ccc;
+            }
             a {
-                color: white;
+                span {
+                    display: block;
+                }
+                img {
+                    width: 75px;
+                    height: 75px;
+                }
             }
         }
     }
@@ -16,5 +144,99 @@
 
 //End header
 //Start section works
+.works {
+    &__inner {
+        padding: 55px 40px;
+        background-color: rgba($color: #fff, $alpha: 0.3);
+        display: flex;
+        justify-content: space-between;
+        color: #000;
+    }
+    &__title {
+        width: 100%;
+        text-align: center;
+        height: 30px;
+        margin-right: 35px;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba($color: #fff, $alpha: 1.0);
+        margin-bottom: 25px;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    &__item {
+        width: 200px;
+        height: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        background-color: rgba($color: #fff, $alpha: 1.0);
+        margin-right: 15px;
+        transition: all .5s;
+        &:hover {
+            box-shadow: 0px 8px 10px 0px rgba(0, 111, 78, 0.46), inset 0px 10px 35.42px 10.58px rgba(0, 0, 0, 0.34);
+        }
+    }
+    &__ad {
+        background-color: rgba($color: #fff, $alpha: 1.0);
+        min-width: 275px;
+        border-radius: 5px;
+        margin-left: 30px;
+    }
+}
+
+.item {
+    &__img {
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        margin: 10px auto 10px;
+    }
+    &__title {
+        font-size: 25px;
+        color: green;
+        margin-bottom: 15px;
+    }
+    &__kadr {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 30px;
+        margin-right: 10px;
+    }
+    &__work {
+        position: relative;
+        color: red;
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url(../images/sitting-on-chair.png);
+            background-size: cover;
+            background-position: center center;
+            width: 13px;
+            height: 15px;
+            top: 0;
+            left: -20px;
+        }
+    }
+    &__vakand {
+        position: relative;
+        color: forestgreen;
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url(../images/barber-chair.png);
+            background-size: cover;
+            background-position: center center;
+            width: 11px;
+            height: 15px;
+            top: 0;
+            left: -20px;
+        }
+    }
+}
+
 //End section works
 @import 'login';
