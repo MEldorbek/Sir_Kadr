@@ -1,0 +1,93 @@
+.works {
+    &__inner {
+        padding: 55px 40px;
+        background-color: rgba($color: #fff, $alpha: 0.3);
+        display: flex;
+        justify-content: space-between;
+        color: #000;
+    }
+    &__title {
+        width: 100%;
+        text-align: center;
+        height: 30px;
+        margin-right: 35px;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba($color: #fff, $alpha: 1.0);
+        margin-bottom: 25px;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    &__item {
+        width: 200px;
+        height: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        background-color: rgba($color: #fff, $alpha: 1.0);
+        margin-right: 15px;
+        transition: all .5s;
+        &:hover {
+            box-shadow: 0px 8px 10px 0px rgba(0, 111, 78, 0.46), inset 0px 10px 35.42px 10.58px rgba(0, 0, 0, 0.34);
+        }
+    }
+    &__ad {
+        background-color: rgba($color: #fff, $alpha: 1.0);
+        min-width: 275px;
+        border-radius: 5px;
+        margin-left: 30px;
+    }
+}
+
+.item {
+    &__img {
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        margin: 10px auto 10px;
+    }
+    &__title {
+        font-size: 25px;
+        color: green;
+        margin-bottom: 15px;
+    }
+    &__kadr {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 30px;
+        margin-right: 10px;
+    }
+    &__work {
+        position: relative;
+        color: red;
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url(../images/sitting-on-chair.png);
+            background-size: cover;
+            background-position: center center;
+            width: 13px;
+            height: 15px;
+            top: 0;
+            left: -20px;
+        }
+    }
+    &__vakand {
+        position: relative;
+        color: forestgreen;
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url(../images/barber-chair.png);
+            background-size: cover;
+            background-position: center center;
+            width: 11px;
+            height: 15px;
+            top: 0;
+            left: -20px;
+        }
+    }
+}

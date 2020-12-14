@@ -1,0 +1,111 @@
+.top-bar {
+    &__inner {
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        height: 90px;
+        width: 100%;
+        top: 0;
+        background-color: #fff;
+        z-index: 1;
+    }
+    &__logo {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 70px;
+        width: auto;
+        & :nth-child(1) {
+            box-shadow: inset 0px 0px 168px 79px rgba(255, 255, 255, 1);
+            border: 15px double #ffffff;
+            background-color: #000;
+            height: 70px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        & :nth-child(2),
+        & :nth-child(4) {
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 29px;
+            height: 32px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+    &__user {
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+        margin-bottom: auto;
+        align-items: center;
+        margin-right: 30px;
+        &--img {
+            width: 75px;
+            height: 75px;
+            background-size: cover;
+            margin-right: 15px;
+            border-radius: 50%;
+            box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.46), inset 0px 10px 35.42px 10.58px rgba(0, 0, 0, 0.34);
+        }
+        &--name {
+            color: black;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.drop-down {
+    position: relative;
+    display: inline-block;
+    padding: 0 15px;
+    &:hover {
+        background-color: #ccc;
+    }
+    &:hover>&__list {
+        overflow: visible;
+        height: auto;
+        opacity: 1;
+        transition: all 0.5s;
+    }
+    a {
+        display: block;
+        &:hover {
+            color: chartreuse;
+        }
+    }
+    ul {
+        padding-left: 0;
+    }
+    li {
+        display: block;
+        text-decoration: none;
+        border-top: 1px solid #000;
+    }
+    a {
+        padding-left: 10px;
+    }
+    &__list {
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        padding-bottom: 10px;
+        background-color: #ccc;
+        border-radius: 0 0 5px 5px;
+        li {
+            margin-top: 10px;
+        }
+    }
+}
+
+.number {
+    &__work {
+        background-color: red;
+        padding: 5px;
+        border-radius: 50%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
