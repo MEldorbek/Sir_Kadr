@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirdaryo Kadr</title>
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+</head>
+
+<body>
+    <!--Start top bar-->
+    <div class="top-bar">
+        <div class="container-fluid">
+            <div class="top-bar__inner">
+                <div class="top-bar__logo">
+                    <img src="images/logos.png" alt="">
+                    <img src="images/barber-chair.png" alt="">
+                    <div class="number__work">40</div>
+                    <img src="images/sitting-on-chair.png" alt="">
+                    <div class="number__work">40</div>
+                </div>
+                <div class="top-bar__user">
+                    <div class="top-bar__user--img" style="background-image: url(images/back_new.jpg);"></div>
+                    <div class="top-bar__user--name">
+                        <ul>
+                            <li class="drop-down">
+                                <a href="#" class="drop-down__link">Boltaboyev Islombek</a>
+                                <ul class="drop-down__list">
+                                    <li>
+                                        <a href="#">
+                                            Profil
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Chiqish
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End top bar-->
+    <!--Start header-->
+    <header class="header">
+        <div class="container">
+            <nav class="header__inner">
+                <ul class="header__menu">
+                    <li>
+                        <a href="#"><img src="images/icons/hierarchical-structure.svg" alt=""><span>Tashkilotlar</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/icons/notebook.svg" alt=""><span>Hisobotlar</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/icons/desk-chair.svg" alt=""><span>Bo'sh ishlar</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/icons/user.svg" alt=""><span>Kadrlar</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/icons/evolution.svg" alt=""><span>Reytinglar</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/icons/document.svg" alt=""><span>Hujjatlar</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/icons/building.svg" alt=""><span>Agentlik</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/icons/folder-plus-solid.svg" alt=""><span>Tashkilot qo'shish</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--End header-->
+
+    <!--Start Section works-->
+    <section class="table">
+        <div class="container__fluid">
+            <div class="table__inner">
+                <div class="table__form">
+                    <div class="table__title">Kadrlar</div>
+                    <form enctype="multipart/form-data" action="/home/users" method="POST">
+                        <input type="text" name="firstname" placeholder="Ismi">
+
+                        <input type="text" name="lastname" placeholder="Familyasi">
+
+                        <input type="text" name="surname" placeholder="Otasini ismi">
+
+                        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+
+                        <input type="button" id="loadFileXml" value="Faylni tanlang" onclick="document.getElementById('file').click();" />
+                        <input type="file" style="display:none;" id="file" name="file" />
+
+                        <input type="text" name="login" placeholder="Login">
+
+                        <input type="text" name="password" placeholder="Parol">
+
+                        <input type="text" name="phone" placeholder="Telefon">
+
+                        <select id="country" name="role">
+                            <option value="1">Admin</option>
+                            <option value="2">Addelkard</option>
+                        </select>
+                        <input type="hidden" name="csrf" value="<?= $data['csrf'] ?>" />
+
+                        <input type="submit" name="submit" value="qo'shish">
+                    </form>
+                </div>
+                <div class="table__tbl">
+                    <table>
+                        <tr>
+                            <th>id</th>
+                            <th>F.I.SH</th>
+                            <th>Surati</th>
+                            <th>login</th>
+                            <th>parol</th>
+                            <th>Telefoni</th>
+                            <th>Kiritilgan</th>
+                            <th>O'zgartirilgan</th>
+                            <th>EDIT</th>
+                            <th>DELETE</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <?= $value['id'] ?>
+                            </td>
+
+                            <td>
+                                <?= $value['last_name'] ?>
+                            </td>
+
+                            <td>
+                                <div class="box-img">
+                                    <img src="https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/04/a0004213/img/basic/a0004213_main.jpg?20200710184501&q=80&rw=750&rh=536" alt="image" width="40" height="40">
+                                </div>
+                            </td>
+                            <td>
+                                <?= $value['login'] ?>
+                            </td>
+                            <td>
+                                <?= $value['password'] ?>
+                            </td>
+                            <td>
+                                <?= $value['phone'] ?>
+                            </td>
+
+                            <td>
+                                <?= $value['user_created_at'] ?>
+                            </td>
+                            <td>
+                                <?= $value['user_updated_at'] ?>
+                            </td>
+                            <td>
+
+                                <button id="edit" class="edit">Edit</button>
+                                <div class="edit__drop-down">
+
+                                    <input type="text" name="firstname" placeholder="Ismi">
+
+                                    <input type="text" name="lastname" placeholder="Familyasi">
+
+                                    <input type="text" name="surname" placeholder="Otasini ismi">
+
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+
+                                    <input type="button" id="loadFileXml" value="Faylni tanlang" onclick="document.getElementById('file').click();" />
+                                    <input type="file" style="display:none;" id="file" name="file" />
+
+                                    <input type="text" name="login" placeholder="Login">
+
+                                    <input type="text" name="password" placeholder="Parol">
+
+                                    <input type="text" name="phone" placeholder="Telefon">
+
+                                    <select id="country" name="role">
+                                        <option value="1">Admin</option>
+                                        <option value="2">Addelkard</option>
+                                      </select>
+                                    <br>
+                                    <input type="hidden" name="csrf" value="<?= $data['csrf'] ?>" />
+                                    <input type="submit" class="edit__no" name="submit" value="NO" style="background-color: tomato;">
+                                    <input type="submit" name="submit" value="OK">
+                                </div>
+
+                            </td>
+                            <td>
+                                <div class="del">
+                                    <button id="del" onclick="del()">Delete</button>
+                                    <div class="del__drop-down">
+                                        <form>
+                                            <input class="del__yes" style="background-color: #00bff3; border-radius: 50%;" type="submit" name="submit" value="ha">
+                                            <input class="del__no" style="background-color: #f7941d; border-radius: 50%;" type="submit" name="submit" value="yo'q">
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Section works-->
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
